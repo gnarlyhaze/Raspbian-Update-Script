@@ -1,5 +1,5 @@
 #!/bin/bash
-# Created by Nathan Clifford for Sir Sanford Fleming College CSI Students
+# Created by Nathan Clifford
 
 # Description:
 # This script is for updating, and performing basic configurations on Rasbian/Debian OSs.
