@@ -73,7 +73,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y
 echo ""
 printf "${LGREEN}Installing/Updating Aptitude & Synaptic Package Managers...${NC}\n"
 sudo apt install -y synaptic # Synaptic package manager
-sudo apt install -y --install-suggests aptitude #Aptitude package manager
+sudo apt install -y aptitude #Aptitude package manager
 sudo aptitude update #update packages in Aptitude
 sudo aptitude upgrade -y --full-resolver #upgrade packages in Aptitude
 
@@ -97,9 +97,9 @@ sudo apt install -y python3.6 python-pip
 ###Install SSH client & server
 echo ""
 printf "${LGREEN}Configuring SSH client & server...${NC}\n"
-sudo apt install -y --install-suggests ssh #install and enable sshd
-sudo apt install -y --install-suggests openssh-server
-sudo apt install -y --install-suggests openssh-client
+sudo apt install -y ssh #install and enable sshd
+sudo apt install -y openssh-server
+sudo apt install -y openssh-client
 sudo apt install -y putty #gui ssh client
 
 ###SSH Setup
@@ -133,13 +133,13 @@ printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n
 #sudo apt install -y terminator # My favorite Terminal emulator
 #mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
 sudo apt install -y lxterminal # Another solid Terminal emulator
-#sudo apt install -y --install-suggests guake #Drop down terminal emulator used with F12 - Also a favorite
-#sudo apt install --install-suggests yakuake #Light-weight drop down terminal emulator used with F12
-sudo apt install -y --install-suggests undistract-me #notifications that watch for long running commands and create a popup when complete
+#sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
+#sudo apt install yakuake #Light-weight drop down terminal emulator used with F12
+sudo apt install -y undistract-me #notifications that watch for long running commands and create a popup when complete
 
 ### Install Alternate Terminal Shells
 sudo apt install -y fish # the friendly interactive shell (fish)
-sudo apt install -y --install-suggests zsh #An extended Bourne shell
+sudo apt install -y zsh #An extended Bourne shell
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" #Install oh-my-zsh add-on for zsh
 
 #printf "${LGREEN}Changing Terminal shell - use "chsh -s bash" or "exec bash" to change back...${NC}\n"
@@ -151,27 +151,27 @@ chsh -s /bin/bash #change default shell back to BASH
 ### Install Utility applications
 echo ""
 printf "${LGREEN}Installing Utility applications...${NC}\n"
-sudo apt install -y --install-suggests gdebi #GUI for installing .deb files
-sudo apt install -y --install-suggests sysvinit-utils
+sudo apt install -y gdebi #GUI for installing .deb files
+sudo apt install -y sysvinit-utils
 #sudo apt install -y gnome-tweak-tool #OS option editor
 #sudo apt install -y alacarte #Applications menu customization options
 #sudo apt install -y orage #Calendar
-sudo apt install -y --install-suggests git git-core #github commandline
+sudo apt install -y git git-core #github commandline
 sudo apt install -y ca-certificates # resolve issue where GitHub's SSL certificate isn't trusted
-sudo apt install -y --install-suggests zip #shrinks files to send back to C&C server so they can be expanded.
+sudo apt install -y zip #shrinks files to send back to C&C server so they can be expanded.
 #sudo apt install -y file-roller #GUI to open and compress
-#sudo apt install -y --install-suggests htop #improved top terminal task manager
+#sudo apt install -y htop #improved top terminal task manager
 #sudo apt install -y ack #Grep-like searching utility
-#sudo apt install -y --install-suggests debian-goodies #Toolbox Utilities for Debian -installs dpigs, checkrestart, debget
+#sudo apt install -y debian-goodies #Toolbox Utilities for Debian -installs dpigs, checkrestart, debget
 #sudo apt install -y debian-installer-launcher #Bootable Debian Installer #untested
 #sudo apt install -y bilibob bilibob-udev # Device management rules for OS running from external media #script doesnt work
 
 # Autokey text expander application
-#sudo apt install -y --install-suggests autokey-qt autokey-gtk autokey-common #untested
+#sudo apt install -y autokey-qt autokey-gtk autokey-common #untested
 
 # Disk & File Utiltiies:
-sudo apt install -y --install-suggests gparted #gparted disk utility
-sudo apt install -y --install-suggests gdisk fdisk #command line disk utilities
+sudo apt install -y gparted #gparted disk utility
+sudo apt install -y gdisk fdisk #command line disk utilities
 sudo apt install -y di #advanced df like disk information utility
 sudo apt install -y duc # high-performance disk usage analyzer
 #sudo apt install -y fatattr fatcat fatsort #utilities for working on FAT filesystems
@@ -193,13 +193,13 @@ echo ""
 # System Benchmark applications:
 echo ""
 printf "${LGREEN}System Benchmark applications...${NC}\n"
-#sudo apt install -y --install-suggests smem powertop cpufrequtils laptop-mode-tools apmd consolekit sysbench hdparm
+#sudo apt install -y smem powertop cpufrequtils laptop-mode-tools apmd consolekit sysbench hdparm
 #sudo apt install -y acpid acpi-support
 
 ### Docks & Dockapps (may require hiding the native window manager's dock):
 echo ""
 printf "${LGREEN}Installing Docks & Dockapps...${NC}\n"
-#sudo apt install -y --install-suggests cairo-dock cairo-dock-core cairo-clock cairo-dock-plug-ins #dynamic 3D dock, heavier. 
+#sudo apt install -y cairo-dock cairo-dock-core cairo-clock cairo-dock-plug-ins #dynamic 3D dock, heavier. 
 #aptitude -r install cairo-dock cairo-dock-plug-ins #install thru aptitude
 #sudo apt install -y plank #simple dock
 #sudo apt install -y mate-dock-applet mate-panel
@@ -218,17 +218,17 @@ printf "${LGREEN}Installing Docks & Dockapps...${NC}\n"
 ### Install Antivirus & Firewall applications:
 echo ""
 printf "${LGREEN}Installing Antivirus & Firewall applications...${NC}\n"
-#sudo apt install -y --install-suggests clamav clamav-unofficial-sigs clamdscan clamtk clamtk-gnome clamtk-nautilus #Clam AntiVirus Utility
-#sudo apt install -y --install-suggests gufw ufw #Gufw Linux Firewall application
+#sudo apt install -y clamav clamav-unofficial-sigs clamdscan clamtk clamtk-gnome clamtk-nautilus #Clam AntiVirus Utility
+#sudo apt install -y gufw ufw #Gufw Linux Firewall application
 
 ### Install Internet applications:
 echo ""
 printf "${LGREEN}Installing Internet applications...${NC}\n"
 #sudo apt install -y transmission # Torrent Client
-#sudo apt install -y --install-suggests uget #Download Manager
+#sudo apt install -y uget #Download Manager
 #sudo apt install -y xdman-downloader #Xtreme Download Manager
 #sudo apt install -y filezilla filezilla-common #FTP client
-#sudo apt install -y --install-suggests links2 #A light in-terminal web browser
+#sudo apt install -y links2 #A light in-terminal web browser
 #sudo apt install -y nodejs npm # NodeJS & NPM JavaScript Web Development
 #sudo apt install -y network-manager-gnome #gnome network manager
 #sudo apt install -y wicd wicd-gtk #network manager
@@ -236,7 +236,7 @@ printf "${LGREEN}Installing Internet applications...${NC}\n"
 # Speedtest Command Line, YoutubeDownloader:
 echo ""
 printf "${LGREEN}Installing Speedtest Command Line...${NC}\n"
-sudo apt install -y --install-suggests speedtest-cli #speedtest from command line
+sudo apt install -y speedtest-cli #speedtest from command line
 #sudo apt install -y youtube-dl mps-youtube #download Youtube and other video sources from command line
 
 ### Install Text Editors:
@@ -266,7 +266,7 @@ sudo apt install -y kjots #Notes program
 #sudo apt install -y glabels #This is for creating labels
 #sudo apt install -y glom #This is for creating databases
 #sudo apt install -y dia #This is for creating diagrams and flowcharts
-#sudo apt install -y --install-suggests libpam-google-authenticator #google authenticator support
+#sudo apt install -y libpam-google-authenticator #google authenticator support
 
 ### Media players applications, and graphics/video editing applications:
 echo ""
@@ -286,8 +286,8 @@ printf "${LGREEN}Installing Media applications...${NC}\n"
 # Text-To-Speech modules:
 echo ""
 printf "${LGREEN}Installing Text-To-Speech Modules...${NC}\n"
-#sudo apt install -y espeak
-#sudo apt install -y flite
+sudo apt install -y espeak
+sudo apt install -y flite
 #sudo apt install -y festival
 
 # Webcam applications:
@@ -319,7 +319,7 @@ printf "${LGREEN}Installing Gnome Applications...${NC}\n"
 #Screenshot Tools
 echo ""
 printf "${LGREEN}Installing Screenshot Tools...${NC}\n"
-sudo apt install -y --install-suggests gnome-screenshot
+sudo apt install -y gnome-screenshot
 sudo apt install -y scrot
 #sudo apt install -y imagemagick
 #sudo apt install -y shutter
@@ -339,7 +339,7 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 
 ## XFCE Desktop ## This one is my favourite
 # Install XFCE Desktop Environment:
-#sudo apt install -y --install-suggests kali-defaults kali-root-login desktop-base xfce4 xfce-keyboard-shortcuts xfce4-places-plugin xfce4-goodies
+#sudo apt install -y kali-defaults kali-root-login desktop-base xfce4 xfce-keyboard-shortcuts xfce4-places-plugin xfce4-goodies
 # Remove XFCE:
 #sudo apt-get remove xfce4 xfce4-places-plugin xfce4-goodies
 
@@ -390,128 +390,48 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 
 ## FVWM Window Manager ##
 #FVWM Window Manager:
-#sudo apt install -y fvwm --install-suggests
+#sudo apt install -y fvwm
 
 #Install i3 Window Manager (Use WindowsKey+Enter to open a new terminal window):
-#sudo apt install -y --install-suggests i3
+#sudo apt install -y i3
 #dpkg-reconfigure i3
 #sudo apt install -y feh #Lightweight image viewer with command line options to set images as screen background.
 #sudo apt install -y nitrogen #Wallpaper browsing and managing utility
 
 #Mutter window manager:
 #sudo apt install -y mutter #default window manager for gnome
-#sudo apt install -y --install-suggests mutter #untested option
+#sudo apt install -y mutter #untested option
 
 ### Login Window Managers:
 #LightDM Login Window Manager
-#sudo apt install -y --install-suggests lightdm #lighter window manager default to Kali Light
+#sudo apt install -y lightdm #lighter window manager default to Kali Light
 
 #Install Slim Login Window Manager:
-#sudo apt install -y --install-suggests slim
+#sudo apt install -y slim
 
 #GnomeDisplayManager Login Window Manager (GDM3):
-#sudo apt install -y --install-suggests gdm #heavier window manager based on gnome
+#sudo apt install -y gdm #heavier window manager based on gnome
 #sudo apt install -y gdm3 #heavier window manager based on gnome
 
-#Kali Linux recommended installs (Enable these options if running Kali Linux to install pentesting utilities):
-echo ""
-printf "${LGREEN}Installing Kali Linux Recommended Installs...${NC}\n"
-#sudo apt install -y --install-suggests kali-linux-top10 #Install the top ten Kali Linux Utilities
-#sudo apt install -y kali-linux-full #full Kali Linux software suite #3GB
-
-#Install Wireshark Application:
-echo ""
-printf "${LGREEN}Installing Wireshark...${NC}\n"
-#sudo apt install -y --install-suggests wireshark wireshark-gtk wireshark-qt # Wireshark
-#sudo apt install -y tcpdump #command line packet analyzer
-#sudo dpkg-reconfigure wireshark-common #fix wireshark permission denied errors
-#sudo adduser $USER wireshark
-
-##Kali Linux Utilities:
-echo ""
-printf "${LGREEN}Installing Kali Linux Utilities...${NC}\n"
-#sudo apt install -y autopsy sleuthkit # Autopsy digital forensics platform
-#sudo apt install -y forensics-colorize # show differences between files using color graphics
-
-##Information Gathering/Scanner Utilities:
-echo ""
-printf "${LGREEN}Installing Scanning Utilities...${NC}\n"
-#sudo apt install -y nmap netcat # network exploration tool to perform security audits
-#sudo apt install -y 0trace # security reconnaissance/firewall bypassing tool
-#sudo apt install -y masscan #fast port scanner
-#sudo apt install -y firewalk #traceroute through firewall and find open ports
-#sudo apt install -y p0f #OS fingerprinting tool
-
-##Kali Linux - Bruteforcing Utilities:
+##Audio Utilities:
 #echo ""
-#printf "${LGREEN}Bruteforcing Utilities...${NC}\n"
-#sudo apt install -y --install-suggests john # JohnTheRipper -fast password cracker
-#sudo apt install -y cewl #Custom Wordlist Generator allows you to create your own custom dictionary file.
-
-##Kali Linux - Anonymizing Utilities:
-#sudo apt install -y openvpn #vpn framework
-#sudo apt install -y squid3 #Squid Proxy
-#sudo apt install -y macchanger #recommended to hide your MAC address while cracking a foreign wireless network.
-#sudo apt install -y proxychains #tunnel kali commands thru proxy server. Hides source IP.
-
-### Install Tor Steps:
-#sudo apt install -y tor # Install the tor browser
-#sudo apt install -y sudo
-#adduser tor
-#passwd tor
-#service tor start
-
-##Kali Linux - Vulnerability Analysis Utilities:
-#sudo apt install -y nikto #web server testing tool
-
-#Install & Setup Armitage and Metasploit Framework:
-#echo ""
-#printf "${LGREEN}Installing Armitage and Metasploit...${NC}\n"
-#sudo apt install -y metasploit-framework # Metasploit Framework
-#sudo apt install -y --install-suggests armitage #Armitage GUI for Metasploit Framework
-#sudo gem install bundler #fix armitage dependencies
-#sudo gem update #fix armitage dependencies
-
-# Start the PostgreSQL Database for Armiteage:
-#systemctl start postgresql
-# Initialize the Metasploit Framework Database:
-#msfdb init
-# Start Armitage:
-#armitage
-
-##Kali Linux - MITM Attack Utilties:
-#echo ""
-#printf "${LGREEN}Installing MITM Attack Utilties...${NC}\n"
-#sudo apt install -y stunnel4 #Stunnel creates secure communication between a TCP client and server by hiding another SSL envelope
-#sudo apt install -y bridge-utils #bridge two ethernet ports together for MITM attacks.
-#sudo apt install -y dsniff #ARP spoofing for MITM attacks.
-#sudo apt install -y ettercap-graphical #Ettercap GUI MITM Attack Suite.
-#sudo apt install -y ettercap-text-only #command-line version Ettercap which consumes less CPU resources.
-#sudo apt install -y sslstrip #prevents SSL encrypted traffic for MITM Attacks
-
-##Audio Utilities for Kali Linux (Kali's audio often doesn't work without these):
-echo ""
-printf "${LGREEN}Installing Audio Utilities...${NC}\n"
-#sudo apt install -y --install-suggests alsa-tools alsa-tools-gui alsa-utils alsa-oss alsamixergui libalsaplayer0 #audio player files
+#printf "${LGREEN}Installing Audio Utilities...${NC}\n"
+#sudo apt install -y alsa-tools alsa-tools-gui alsa-utils alsa-oss alsamixergui libalsaplayer0 #audio player files
 #sudo apt install -y kmix #audio files
-#sudo apt install -y --install-suggests mpg321 #command line mp3 player
+#sudo apt install -y mpg321 #command line mp3 player
 
 # Amusing Programs & Linux Games:
-echo ""
-printf "${LGREEN}Installing Linux Games & Amusing Programs...${NC}\n"
+#echo ""
+#printf "${LGREEN}Installing Linux Games & Amusing Programs...${NC}\n"
 #sudo apt install -y fortunes fortune-mod #Terminal fortune cookies -needs to be configured in Kali
 #sudo apt install -y fortunes-debian-hints
 #sudo apt install -y fortunes-mario 
 #sudo apt install -y fortunes-off #offensive fortunes
 #sudo apt install -y fortunes-min #minimum fortunes
 #sudo apt install -y xcowsay cowsay #this is an important package -needs to be configured in Kali
-#sudo gem install lolcat
-#sudo apt install -y xfireworks xfishtank # Fireworks/Aquarium in your root window
 #sudo apt install -y toilet #generates ASCII Art
 #sudo apt install -y figlet #generates ASCII Art
 #sudo apt install -y jp2a #changes any picture that you want into ASCII art
-#sudo apt install -y pacman pacman4console #Pacman game
-#sudo apt install -y fretsonfire fretsonfire-game #Frets on Fire (Guitar Hero Clone) Game
 #sudo apt install -y sl #terminal steam locamotive
 
 # Open a window to show where Linux games are stored (they're run by prefacing the filename with ./ just like any other program):
