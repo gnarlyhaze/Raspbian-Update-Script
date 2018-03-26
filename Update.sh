@@ -23,6 +23,11 @@ sudo apt -qq install -y screenfetch linuxlogo #used to generate one of those nif
 screenfetch #ascii art system info
 #linuxlogo #more ascii art system info
 
+#Install and configure Terminator:
+sudo apt install -y terminator # My favorite Terminal emulator
+mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
+update-alternatives --config x-terminal-emulator #set a default terminal emulator program
+
 # Assign text colour for alert lines:  
 RED='\033[0;31m' # Red
 GREEN='\033[0;32m' # Green
@@ -133,8 +138,6 @@ sudo apt install -y cups #allows printing from other computers - use VNC Viewer 
 # update-alternatives --config x-terminal-emulator #set a default terminal emulator program
 echo ""
 printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n"
-sudo apt install -y terminator # My favorite Terminal emulator
-mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
 sudo apt install -y lxterminal # Another solid Terminal emulator
 #sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
 #sudo apt install yakuake #Light-weight drop down terminal emulator used with F12
