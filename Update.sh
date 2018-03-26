@@ -82,7 +82,11 @@ sudo apt install -y unattended-upgrades
 sudo unattended-upgrades
 
 ### Install Python 3:
-sudo apt install -y python3.6 python-pip
+sudo apt install -y python3 python3-pip python3-dev python3-picamera
+sudo pip install virtualenv
+
+### Install Python 2:
+#sudo apt install -y python-pip python-dev 
 
 ###Install SSH client & server
 echo ""
@@ -112,11 +116,18 @@ printf "${LGREEN}Installing VNC client & server applications...${NC}\n"
 sudo apt install -y realvnc-vnc-server 
 sudo apt install -y realvnc-vnc-viewer
 sudo apt install -y autocutsel #allows copy and paste text between applications
+sudo apt install -y cups #allows printing from other computers - use VNC Viewer to select File > Print
+#sudo apt install -y tightvncserver #TightVNC -Kali's default VNC Server
+#sudo apt install -y remmina # Similar to Windows Remote Desktop functions
+#sudo apt install -y tightvncclient #TightVNC Client
 #sudo apt install -y x11vnc #Simple VNC Server
 #x11vnc -storepasswd # Assign a VNC password for x11vnc
-#sudo apt install -y tightvncserver #TightVNC -Kali's default VNC Server
-#sudo apt install -y tightvncclient #TightVNC Client
-#sudo apt install -y remmina # Similar to Windows Remote Desktop functions
+
+#Operating RealVNC Server at the command line:
+#To start VNC Server now: sudo systemctl start vncserver-x11-serviced.service
+#To start VNC Server at next boot, and every subsequent boot: sudo systemctl enable vncserver-x11-serviced.service
+#To stop VNC Server: sudo systemctl stop vncserver-x11-serviced.service
+#To prevent VNC Server starting at boot: sudo systemctl disable vncserver-x11-serviced.service
 
 ### Install Terminal applications, notification applications
 # update-alternatives --config x-terminal-emulator #set a default terminal emulator program
@@ -135,25 +146,23 @@ sudo apt install -y zsh #An extended Bourne shell
 #sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" #Install oh-my-zsh add-on for zsh
 
 #printf "${LGREEN}Changing Terminal shell - use "chsh -s bash" or "exec bash" to change back...${NC}\n"
+#sudo chsh -s /bin/bash #change default shell back to BASH
 #exec zsh #syntax to temporarily switch terminal shell (ie. to zsh, bash, sh, or fish)
 #chsh -s $(which fish) #change default shell to fish
 #chsh -s $(which zsh) #change default shell to zsh
-chsh -s /bin/bash #change default shell back to BASH
 
 ### Install Utility applications
 echo ""
 printf "${LGREEN}Installing Utility applications...${NC}\n"
 sudo apt install -y gdebi #GUI for installing .deb files
 sudo apt install -y sysvinit-utils
-#sudo apt install -y gnome-tweak-tool #OS option editor
-#sudo apt install -y alacarte #Applications menu customization options
-#sudo apt install -y orage #Calendar
+sudo apt install -y gnome-tweak-tool #OS option editor
 sudo apt install -y git git-core #github commandline
 sudo apt install -y ca-certificates # resolve issue where GitHub's SSL certificate isn't trusted
 sudo apt install -y zip #shrinks files to send back to C&C server so they can be expanded.
+#sudo apt install -y alacarte #Applications menu customization options
+#sudo apt install -y orage #Calendar
 #sudo apt install -y file-roller #GUI to open and compress
-#sudo apt install -y htop #improved top terminal task manager
-#sudo apt install -y ack #Grep-like searching utility
 #sudo apt install -y debian-goodies #Toolbox Utilities for Debian -installs dpigs, checkrestart, debget
 #sudo apt install -y debian-installer-launcher #Bootable Debian Installer #untested
 #sudo apt install -y bilibob bilibob-udev # Device management rules for OS running from external media #script doesnt work
@@ -166,6 +175,8 @@ sudo apt install -y gparted #gparted disk utility
 sudo apt install -y gdisk fdisk #command line disk utilities
 sudo apt install -y di #advanced df like disk information utility
 sudo apt install -y duc # high-performance disk usage analyzer
+sudo apt install -y htop #improved top terminal task manager
+sudo apt install -y ack #Grep-like searching utility
 #sudo apt install -y fatattr fatcat fatsort #utilities for working on FAT filesystems
 #sudo apt install -y bleachbit #delete files securely
 #sudo apt install -y k4dirstat #disk usage statistics viewer and cleanup tool
@@ -304,9 +315,9 @@ printf "${LGREEN}Installing Gnome Applications...${NC}\n"
 #sudo apt install -y gnome-core gnome #install full GNOME suite #1.8GB
 #sudo apt install -y gnome-tweak-tool #OS option editor
 
-# Gnome Schedule - GUI for crontab:
+#Gnome Schedule - GUI for crontab:
 #sudo apt install -y gnome-schedule #GUI for crontab ###Script not working
-# cd ~/Downloads && git clone git://git.gnome.org/gnome-schedule
+#cd ~/Downloads && git clone git://git.gnome.org/gnome-schedule
 
 #Screenshot Tools
 echo ""
