@@ -10,16 +10,6 @@
 # chmod u+x Update.sh
 # sudo ./Update.sh
 
-# GNU Free-Use License (don't blame me if you break something thru use of this script):
-#This program is free software: you can redistribute it and/or modify
-#it under the terms of the GNU General Public License as publ	ished by
-#the Free Software Foundation, either version 3 of the License,
-#or (at your option) any later version.
-#This program is distributed in the hope that it will be useful,
-#but WITHOUT ANY WARRANTY; without even the implied warranty of
-#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details <https://www.gnu.org/licenses/gpl.txt>
-
 ### Correct errors from any previously failed installations (leave enabled):
 sudo apt --fix-broken install -y
 sudo dpkg --configure -a
@@ -119,6 +109,8 @@ sudo apt install -y putty #gui ssh client
 ### VNC client & server applications
 echo ""
 printf "${LGREEN}Installing VNC client & server applications...${NC}\n"
+sudo apt install -y realvnc-vnc-server 
+sudo apt install -y realvnc-vnc-viewer
 sudo apt install -y autocutsel #allows copy and paste text between applications
 #sudo apt install -y x11vnc #Simple VNC Server
 #x11vnc -storepasswd # Assign a VNC password for x11vnc
@@ -130,8 +122,8 @@ sudo apt install -y autocutsel #allows copy and paste text between applications
 # update-alternatives --config x-terminal-emulator #set a default terminal emulator program
 echo ""
 printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n"
-#sudo apt install -y terminator # My favorite Terminal emulator
-#mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
+sudo apt install -y terminator # My favorite Terminal emulator
+mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
 sudo apt install -y lxterminal # Another solid Terminal emulator
 #sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
 #sudo apt install yakuake #Light-weight drop down terminal emulator used with F12
@@ -140,7 +132,7 @@ sudo apt install -y undistract-me #notifications that watch for long running com
 ### Install Alternate Terminal Shells
 sudo apt install -y fish # the friendly interactive shell (fish)
 sudo apt install -y zsh #An extended Bourne shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" #Install oh-my-zsh add-on for zsh
+#sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" #Install oh-my-zsh add-on for zsh
 
 #printf "${LGREEN}Changing Terminal shell - use "chsh -s bash" or "exec bash" to change back...${NC}\n"
 #exec zsh #syntax to temporarily switch terminal shell (ie. to zsh, bash, sh, or fish)
@@ -193,8 +185,8 @@ echo ""
 # System Benchmark applications:
 echo ""
 printf "${LGREEN}System Benchmark applications...${NC}\n"
-#sudo apt install -y smem powertop cpufrequtils laptop-mode-tools apmd consolekit sysbench hdparm
-#sudo apt install -y acpid acpi-support
+sudo apt install -y smem powertop cpufrequtils laptop-mode-tools apmd consolekit sysbench hdparm
+sudo apt install -y acpid acpi-support
 
 ### Docks & Dockapps (may require hiding the native window manager's dock):
 echo ""
@@ -272,7 +264,7 @@ sudo apt install -y kjots #Notes program
 echo ""
 printf "${LGREEN}Installing Media applications...${NC}\n"
 #sudo apt install -y cmus #Command Line media player -might need to download tarball instead
-#sudo apt install -y clementine #Media player
+sudo apt install -y clementine #Media player
 #sudo apt install -y rhythmbox #Media player
 #sudo apt install -y vlc #VLC Player
 #sudo apt install -y pinta #Microsoft Paint
