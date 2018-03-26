@@ -23,7 +23,7 @@ sudo apt -qq install -y screenfetch linuxlogo #used to generate one of those nif
 screenfetch #ascii art system info
 #linuxlogo #more ascii art system info
 
-#Install and configure Terminator:
+#Install & configure Terminator - terminal emulator:
 sudo apt install -y terminator # My favorite Terminal emulator
 mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
 update-alternatives --config x-terminal-emulator #set a default terminal emulator program
@@ -121,7 +121,7 @@ printf "${LGREEN}Installing VNC client & server applications...${NC}\n"
 sudo apt install -y realvnc-vnc-server 
 sudo apt install -y realvnc-vnc-viewer
 sudo apt install -y autocutsel #allows copy and paste text between applications
-sudo apt install -y cups #allows printing from other computers - use VNC Viewer to select File > Print
+#sudo apt install -y cups #allows printing from other computers - use VNC Viewer to select File > Print
 #sudo apt install -y tightvncserver #TightVNC -Kali's default VNC Server
 #sudo apt install -y remmina # Similar to Windows Remote Desktop functions
 #sudo apt install -y tightvncclient #TightVNC Client
@@ -135,13 +135,13 @@ sudo apt install -y cups #allows printing from other computers - use VNC Viewer 
 #To prevent VNC Server starting at boot: sudo systemctl disable vncserver-x11-serviced.service
 
 ### Install Terminal applications, notification applications
-# update-alternatives --config x-terminal-emulator #set a default terminal emulator program
 echo ""
 printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n"
 sudo apt install -y lxterminal # Another solid Terminal emulator
 #sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
 #sudo apt install yakuake #Light-weight drop down terminal emulator used with F12
 sudo apt install -y undistract-me #notifications that watch for long running commands and create a popup when complete
+# update-alternatives --config x-terminal-emulator #set a default terminal emulator program
 
 ### Install Alternate Terminal Shells
 sudo apt install -y fish # the friendly interactive shell (fish)
