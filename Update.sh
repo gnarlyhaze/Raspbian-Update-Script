@@ -23,16 +23,6 @@ sudo apt -qq install -y screenfetch linuxlogo #used to generate one of those nif
 screenfetch #ascii art system info
 #linuxlogo #more ascii art system info
 
-#Install & configure Terminator - terminal emulator:
-git clone https://github.com/albfan/terminator
-cd terminator && sudo ./bzr2git.sh
-
-#sudo apt install -y terminator # My favorite Terminal emulator
-#sudo mkdir /home/pi/.config/terminator && sudo cp terminator_config /home/pi/.config/terminator/config #configure terminator
-#sudo mkdir /root/.config/terminator && sudo cp terminator_config /root/.config/terminator/config #configure terminator
-#sudo mkdir /root/.config/ && sudo mkdir /root/.config/terminator && sudo cp terminator_config /root/.config/terminator/config #configure terminator
-#update-alternatives --config x-terminal-emulator #set a default terminal emulator program
-
 # Assign text colour for alert lines:  
 RED='\033[0;31m' # Red
 GREEN='\033[0;32m' # Green
