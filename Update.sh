@@ -24,9 +24,11 @@ screenfetch #ascii art system info
 #linuxlogo #more ascii art system info
 
 #Install & configure Terminator - terminal emulator:
-sudo apt install -y terminator # My favorite Terminal emulator
-sudo mkdir /home/pi/.config/terminator && sudo cp terminator_config /home/pi/.config/terminator/config #configure terminator
+git clone https://github.com/albfan/terminator
+cd terminator && sudo ./bzr2git.sh
 
+#sudo apt install -y terminator # My favorite Terminal emulator
+#sudo mkdir /home/pi/.config/terminator && sudo cp terminator_config /home/pi/.config/terminator/config #configure terminator
 #sudo mkdir /root/.config/terminator && sudo cp terminator_config /root/.config/terminator/config #configure terminator
 #sudo mkdir /root/.config/ && sudo mkdir /root/.config/terminator && sudo cp terminator_config /root/.config/terminator/config #configure terminator
 #update-alternatives --config x-terminal-emulator #set a default terminal emulator program
