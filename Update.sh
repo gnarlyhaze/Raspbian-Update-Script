@@ -82,11 +82,11 @@ sudo apt install -y unattended-upgrades
 sudo unattended-upgrades
 
 ### Install Python 3:
-sudo apt install -y python3 python3-pip python3-dev python3-picamera
-sudo pip install virtualenv
+#sudo apt install -y python3 python3-pip python3-dev python3-picamera
 
 ### Install Python 2:
-#sudo apt install -y python-pip python-dev 
+sudo apt install -y python-pip python-dev 
+sudo pip install virtualenv
 
 ###Install SSH client & server
 echo ""
