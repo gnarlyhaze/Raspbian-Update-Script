@@ -26,7 +26,7 @@ screenfetch #ascii art system info
 #Install & configure Terminator - terminal emulator:
 sudo apt install -y terminator # My favorite Terminal emulator
 mkdir /root/.config/terminator & cp terminator_config /root/.config/terminator/config #configure terminator
-update-alternatives --config x-terminal-emulator #set a default terminal emulator program
+#update-alternatives --config x-terminal-emulator #set a default terminal emulator program
 
 # Assign text colour for alert lines:  
 RED='\033[0;31m' # Red
