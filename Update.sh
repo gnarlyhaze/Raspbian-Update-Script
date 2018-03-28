@@ -52,12 +52,9 @@ printf "${LGREEN}These updates may take awhile... So here's Star Wars!${NC}\n"
 x-terminal-emulator --title="Star Wars" -e telnet towel.blinkenlights.nl 
 
 ### Perform System Updates (leave enabled, these are the primary actions of this script):
-### "apt update" downloads a list of updates that are available
-### "sudo apt upgrade -y" upgrades your packages but doesn't remove or install any other packages.
-### "sudo apt full-upgrade -y"  upgrades your packages and installs or removes other packages to resolve dependencies so that all packages are up-to-date.
 echo ""
 printf "${LGREEN}Performing System Updates - This may take some time...${NC}\n"
-sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y 
+sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y
 
 ### Install Aptitude & Synaptic, and update Aptitude packages (leave enabled):
 echo ""
@@ -97,7 +94,7 @@ sudo apt install -y openssh-client
 sudo apt install -y putty #gui ssh client
 
 ###SSH Setup
-#cd /etc/ssh/ && mkdir default_kali_keys && mv ssh_host_* default_kali_keys/ #Move default SSH keys
+#cd /etc/ssh/ && mkdir default_ssh_keys && mv ssh_host_* default_ssh_keys/ #Move default SSH keys
 #dpkg-reconfigure openssh-server && service ssh restart #Generate new SSH keys
 #service ssh start && update-rc.d -f ssh remove && update-rc.d ssh defaults #start SSH service after reboot by modifying run level settings
 
@@ -117,7 +114,7 @@ sudo apt install -y realvnc-vnc-server
 sudo apt install -y realvnc-vnc-viewer
 sudo apt install -y autocutsel #allows copy and paste text between applications
 #sudo apt install -y cups #allows printing from other computers - use VNC Viewer to select File > Print
-#sudo apt install -y tightvncserver #TightVNC -Kali's default VNC Server
+#sudo apt install -y tightvncserver #TightVNC server
 #sudo apt install -y remmina # Similar to Windows Remote Desktop functions
 #sudo apt install -y tightvncclient #TightVNC Client
 #sudo apt install -y x11vnc #Simple VNC Server
@@ -132,22 +129,23 @@ sudo apt install -y autocutsel #allows copy and paste text between applications
 ### Install Terminal applications, notification applications
 echo ""
 printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n"
+#sudo apt install -y terminator # My favorite Terminal emulator
 sudo apt install -y lxterminal # Another solid Terminal emulator
 #sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
 #sudo apt install yakuake #Light-weight drop down terminal emulator used with F12
 sudo apt install -y undistract-me #notifications that watch for long running commands and create a popup when complete
-# update-alternatives --config x-terminal-emulator #set a default terminal emulator program
+#update-alternatives --config x-terminal-emulator #set a default terminal emulator program
 
 ### Install Alternate Terminal Shells
 sudo apt install -y fish # the friendly interactive shell (fish)
 sudo apt install -y zsh #An extended Bourne shell
-#sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" #Install oh-my-zsh add-on for zsh
+#sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" #Install oh-my-zsh add-on for zsh (run-once)
 
 #printf "${LGREEN}Changing Terminal shell - use "chsh -s bash" or "exec bash" to change back...${NC}\n"
-#sudo chsh -s /bin/bash #change default shell back to BASH
-#exec zsh #syntax to temporarily switch terminal shell (ie. to zsh, bash, sh, or fish)
-#chsh -s $(which fish) #change default shell to fish
-#chsh -s $(which zsh) #change default shell to zsh
+#sudo exec zsh #syntax to temporarily switch terminal shell (ie. to zsh, bash, sh, or fish)
+#sudo chsh -s $(which fish) #change default shell to fish
+#sudo chsh -s $(which zsh) #change default shell to zsh
+sudo chsh -s /bin/bash #change default shell back to BASH
 
 ### Install Utility applications
 echo ""
@@ -340,41 +338,41 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 
 ## XFCE Desktop ## This one is my favourite
 # Install XFCE Desktop Environment:
-#sudo apt install -y kali-defaults kali-root-login desktop-base xfce4 xfce-keyboard-shortcuts xfce4-places-plugin xfce4-goodies
+#sudo apt install -y desktop-base xfce4 xfce-keyboard-shortcuts xfce4-places-plugin xfce4-goodies
 # Remove XFCE:
 #sudo apt-get remove xfce4 xfce4-places-plugin xfce4-goodies
 
 ## KDE Desktop ##
 # Install KDE Plasma Desktop Environment:
-#sudo apt install -y kali-defaults kali-root-login desktop-base kde-plasma-desktop
+#sudo apt install -y desktop-base kde-plasma-desktop
 # Install Standard Debian selected packages and frameworks:
-#sudo apt install -y kali-defaults kali-root-login desktop-base kde-standard
+#sudo apt install -y desktop-base kde-standard
 # Install KDE Full Install:
-#sudo apt install -y kali-defaults kali-root-login desktop-base kde-full
+#sudo apt install -y desktop-base kde-full
 # Remove KDE:
 #sudo apt-get remove kde-plasma-desktop kde-plasma-netbook kde-standard
 
 ## LXDE Desktop ##
 # Install LXDE Desktop Environment:
-#sudo apt install -y kali-defaults kali-root-login desktop-base lxde-core lxde 
+#sudo apt install -y desktop-base lxde-core lxde 
 # Remove LXDE:
 #sudo apt-get remove lxde-core lxde
 
 ## GNOME Desktop ##
-# How to install GNOME on Kali Linux:
-#sudo apt install -y kali-defaults kali-root-login desktop-base gnome-core gnome-common
+# How to install GNOME:
+#sudo apt install -y desktop-base gnome-core gnome-common
 # Remove GNOME:
 #sudo apt-get remove gnome-core
 
 ## Cinnamon Desktop ## This is also excellent
 # Install Cinnamon Desktop Environment:
-#sudo apt install -y kali-defaults kali-root-login desktop-base cinnamon cinnamon-control-center-data
+#sudo apt install -y desktop-base cinnamon cinnamon-control-center-data
 # Remove Cinnamon Desktop Environment:
 #apt-get remove cinnamon
 
 ## MATE Desktop (1) ##
 #Install MATE Desktop Environment:
-#sudo apt install -y kali-defaults kali-root-login desktop-base mate-core mate-desktop-environment mate-desktop-environment-extra
+#sudo apt install -y desktop-base mate-core mate-desktop-environment mate-desktop-environment-extra
 #sudo apt install -y mate-dock-applet mate-panel mozo #mozo is the MATE main menu editing tool
 ## MATE Desktop (2) ##
 #echo "deb http://repo.mate-desktop.org/debian wheezy main" >> /etc/apt/sources.list && apt-get update
@@ -405,7 +403,7 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 
 ### Login Window Managers:
 #LightDM Login Window Manager
-#sudo apt install -y lightdm #lighter window manager default to Kali Light
+#sudo apt install -y lightdm #lighter window manager
 
 #Install Slim Login Window Manager:
 #sudo apt install -y slim
@@ -424,23 +422,23 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 # Amusing Programs & Linux Games:
 #echo ""
 #printf "${LGREEN}Installing Linux Games & Amusing Programs...${NC}\n"
-#sudo apt install -y fortunes fortune-mod #Terminal fortune cookies -needs to be configured in Kali
+#sudo apt install -y fortunes fortune-mod #Terminal fortune cookies
 #sudo apt install -y fortunes-debian-hints
 #sudo apt install -y fortunes-mario 
 #sudo apt install -y fortunes-off #offensive fortunes
-#sudo apt install -y fortunes-min #minimum fortunes
-#sudo apt install -y xcowsay cowsay #this is an important package -needs to be configured in Kali
+sudo apt install -y fortunes-min #minimum fortunes
+sudo apt install -y xcowsay cowsay #this is an important package
 #sudo apt install -y toilet #generates ASCII Art
 #sudo apt install -y figlet #generates ASCII Art
 #sudo apt install -y jp2a #changes any picture that you want into ASCII art
-#sudo apt install -y sl #terminal steam locamotive
+sudo apt install -y sl #terminal steam locamotive
 
 # Open a window to show where Linux games are stored (they're run by prefacing the filename with ./ just like any other program):
 #echo ""
 #printf "${LGREEN}Linux Games can be found here...${NC}\n"
 #cd /usr/games/ && xdg-open .
 
-### Upgrade Rasberry Pi firmware (It will break Kali_ARM horribly) - DO NOT ENABLE THIS OPTION unless you know what you are doing!!!
+### Upgrade Rasberry Pi firmware (It may break things horribly) - DO NOT ENABLE THIS OPTION unless you know what you are doing!!!
 #sudo curl -L --output /usr/bin/rpi-update https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
 #sudo apt install -y rpi-update
 #sudo rpi-update
