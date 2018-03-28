@@ -430,8 +430,8 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 #sudo apt install -y mpg321 #command line mp3 player
 
 # Amusing Programs & Linux Games:
-#echo ""
-#printf "${LGREEN}Installing Linux Games & Amusing Programs...${NC}\n"
+echo ""
+printf "${LGREEN}Installing Linux Games & Amusing Programs...${NC}\n"
 #sudo apt install -y fortunes fortune-mod #Terminal fortune cookies
 #sudo apt install -y fortunes-debian-hints
 #sudo apt install -y fortunes-mario 
