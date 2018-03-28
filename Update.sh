@@ -48,10 +48,10 @@ sudo ntpdate -u ntp.ubuntu.com
 # Ensure ntp service runs at bootup (Error on Raspi: "Cannot find an LSB script for ntp")
 #update-rc.d ntp enable 
 
-#watch Start Wars in ASCII Art while the updates complete:
-sudo apt -qq install -y telnet
+#Watch Start Wars in ASCII Art while the updates complete:
 echo ""
 printf "${LGREEN}These updates may take awhile... So here's Star Wars!${NC}\n"
+sudo apt -qq install -y telnet
 x-terminal-emulator --title="Star Wars" -e telnet towel.blinkenlights.nl 
 
 ### Perform System Updates (leave enabled, these are the primary actions of this script):
