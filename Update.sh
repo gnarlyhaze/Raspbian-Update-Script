@@ -45,6 +45,9 @@ sudo apt -qq install -y ntpdate
 sudo ntpdate -u ntp.ubuntu.com
 #dpkg-reconfigure tzdata #manually configure timezone
 
+# Ensure ntp service runs at bootup
+update-rc.d ntp enable
+
 #watch Start Wars in ASCII Art while the updates complete:
 sudo apt -qq install -y telnet
 echo ""
@@ -84,6 +87,9 @@ sudo unattended-upgrades
 ### Install Python 2:
 sudo apt install -y python-pip python-dev 
 sudo pip install virtualenv
+
+#Upgrade PIP
+pip install --upgrade pip
 
 ###Install SSH client & server
 echo ""
