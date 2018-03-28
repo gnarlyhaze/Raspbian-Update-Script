@@ -45,8 +45,8 @@ sudo apt -qq install -y ntpdate
 sudo ntpdate -u ntp.ubuntu.com
 #dpkg-reconfigure tzdata #manually configure timezone
 
-# Ensure ntp service runs at bootup
-update-rc.d ntp enable
+# Ensure ntp service runs at bootup (Error on Raspi: "Cannot find an LSB script for ntp")
+#update-rc.d ntp enable 
 
 #watch Start Wars in ASCII Art while the updates complete:
 sudo apt -qq install -y telnet
@@ -80,6 +80,10 @@ echo ""
 printf "${LGREEN}Installing Security Upgrades...${NC}\n"
 sudo apt install -y unattended-upgrades
 sudo unattended-upgrades
+
+### Install Python and update PIP (it appears the system default is Python 2.7, change this v3 at your own risk):
+echo ""
+printf "${LGREEN}Installing Python2 & Updating PIP...${NC}\n"
 
 ### Install Python 3:
 #sudo apt install -y python3 python3-pip python3-dev python3-picamera
