@@ -49,10 +49,10 @@ sudo ntpdate -u ntp.ubuntu.com
 #update-rc.d ntp enable 
 
 #Watch Start Wars in ASCII Art while the updates complete:
-echo ""
-printf "${LGREEN}These updates may take awhile... So here's Star Wars!${NC}\n"
-sudo apt -qq install -y telnet
-x-terminal-emulator --title="Star Wars" -e telnet towel.blinkenlights.nl 
+#echo ""
+#printf "${LGREEN}These updates may take awhile... So here's Star Wars!${NC}\n"
+#sudo apt -qq install -y telnet
+#x-terminal-emulator --title="Star Wars" -e telnet towel.blinkenlights.nl 
 
 ### Perform System Updates (leave enabled, these are the primary actions of this script):
 echo ""
@@ -81,19 +81,20 @@ printf "${LGREEN}Installing Security Upgrades...${NC}\n"
 sudo apt install -y unattended-upgrades
 sudo unattended-upgrades
 
+## Check current Python version:
+printf "${LGREEN}Current Python Version is...${NC}\n"
+python -V
+
 ### Install Python and update PIP (it appears the system default is Python 2.7, change this v3 at your own risk):
 echo ""
 printf "${LGREEN}Installing Python2 & Updating PIP...${NC}\n"
+sudo apt install -y python-pip python-dev 
+sudo pip install virtualenv
+#Upgrade PIP
+pip install --upgrade pip
 
 ### Install Python 3:
 #sudo apt install -y python3 python3-pip python3-dev python3-picamera
-
-### Install Python 2:
-sudo apt install -y python-pip python-dev 
-sudo pip install virtualenv
-
-#Upgrade PIP
-pip install --upgrade pip
 
 ###Install SSH client & server
 echo ""
@@ -179,10 +180,10 @@ sudo apt install -y zip #shrinks files to send back to C&C server so they can be
 # Disk & File Utiltiies:
 sudo apt install -y gparted #gparted disk utility
 sudo apt install -y gdisk fdisk #command line disk utilities
-sudo apt install -y di #advanced df like disk information utility
-sudo apt install -y duc # high-performance disk usage analyzer
-sudo apt install -y htop #improved top terminal task manager
-sudo apt install -y ack #Grep-like searching utility
+#sudo apt install -y di #advanced df like disk information utility
+#sudo apt install -y duc # high-performance disk usage analyzer
+#sudo apt install -y htop #improved top terminal task manager
+#sudo apt install -y ack #Grep-like searching utility
 #sudo apt install -y fatattr fatcat fatsort #utilities for working on FAT filesystems
 #sudo apt install -y bleachbit #delete files securely
 #sudo apt install -y k4dirstat #disk usage statistics viewer and cleanup tool
