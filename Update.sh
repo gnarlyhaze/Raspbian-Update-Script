@@ -137,6 +137,9 @@ sudo apt install -y autocutsel #allows copy and paste text between applications
 #To stop VNC Server: sudo systemctl stop vncserver-x11-serviced.service
 #To prevent VNC Server starting at boot: sudo systemctl disable vncserver-x11-serviced.service
 
+### Install Raspi Imaging Tool
+sudo apt-get install -y rpi-imager
+
 ### Install Terminal applications, notification applications
 echo ""
 printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n"
