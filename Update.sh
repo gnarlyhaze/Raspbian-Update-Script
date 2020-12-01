@@ -86,12 +86,12 @@ printf "${LGREEN}Current Python Version is...${NC}\n"
 python -V
 
 ### Install Python and update PIP (it appears the system default is Python 2.7, change this v3 at your own risk):
-echo ""
-printf "${LGREEN}Installing Python2 & Updating PIP...${NC}\n"
-sudo apt install -y python-pip python-dev 
-sudo pip install virtualenv
+#echo ""
+#printf "${LGREEN}Installing Python2 & Updating PIP...${NC}\n"
+#sudo apt install -y python-pip python-dev 
+#sudo pip install virtualenv
 #Upgrade PIP
-pip install --upgrade pip
+#pip install --upgrade pip
 
 ### Install Python 3:
 #sudo apt install -y python3 python3-pip python3-dev python3-picamera
@@ -138,14 +138,14 @@ sudo apt install -y autocutsel #allows copy and paste text between applications
 #To prevent VNC Server starting at boot: sudo systemctl disable vncserver-x11-serviced.service
 
 ### Install Raspi Imaging Tool
-sudo apt-get install -y rpi-imager
+#sudo apt-get install -y rpi-imager
 
 ### Install Terminal applications, notification applications
 echo ""
 printf "${LGREEN}Installing Terminal applications and Alternate Shells...${NC}\n"
-#sudo apt install -y terminator # My favorite Terminal emulator
-sudo apt install -y lxterminal # Another solid Terminal emulator
-#sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
+sudo apt install -y terminator # My favorite Terminal emulator
+#sudo apt install -y lxterminal # Another solid Terminal emulator
+sudo apt install -y guake #Drop down terminal emulator used with F12 - Also a favorite
 #sudo apt install yakuake #Light-weight drop down terminal emulator used with F12
 sudo apt install -y undistract-me #notifications that watch for long running commands and create a popup when complete
 #update-alternatives --config x-terminal-emulator #set a default terminal emulator program
@@ -165,8 +165,8 @@ sudo chsh -s /bin/bash #change default shell back to BASH
 echo ""
 printf "${LGREEN}Installing Utility applications...${NC}\n"
 sudo apt install -y gdebi #GUI for installing .deb files
-sudo apt install -y sysvinit-utils
-sudo apt install -y gnome-tweak-tool #OS option editor
+#sudo apt install -y sysvinit-utils
+#sudo apt install -y gnome-tweak-tool #OS option editor
 sudo apt install -y git git-core #github commandline
 sudo apt install -y ca-certificates # resolve issue where GitHub's SSL certificate isn't trusted
 sudo apt install -y zip #shrinks files to send back to C&C server so they can be expanded.
@@ -207,7 +207,7 @@ echo ""
 echo ""
 printf "${LGREEN}System Benchmark applications...${NC}\n"
 sudo apt install -y smem powertop cpufrequtils laptop-mode-tools apmd consolekit sysbench hdparm
-sudo apt install -y acpid acpi-support
+#sudo apt install -y acpid acpi-support
 
 ### Docks & Dockapps (may require hiding the native window manager's dock):
 echo ""
@@ -250,7 +250,7 @@ printf "${LGREEN}Installing Internet applications...${NC}\n"
 echo ""
 printf "${LGREEN}Installing Speedtest Command Line...${NC}\n"
 sudo apt install -y speedtest-cli #speedtest from command line
-#sudo apt install -y youtube-dl mps-youtube #download Youtube and other video sources from command line
+sudo apt install -y youtube-dl mps-youtube #download Youtube and other video sources from command line
 
 ### Install Text Editors:
 echo ""
@@ -287,7 +287,7 @@ printf "${LGREEN}Installing Media applications...${NC}\n"
 #sudo apt install -y cmus #Command Line media player -might need to download tarball instead
 sudo apt install -y clementine #Media player
 #sudo apt install -y rhythmbox #Media player
-#sudo apt install -y vlc #VLC Player
+sudo apt install -y vlc #VLC Player
 #sudo apt install -y pinta #Microsoft Paint
 #sudo apt install -y gimp #For editing images
 #sudo apt install -y inkscape #For editing images
@@ -436,7 +436,7 @@ printf "${LGREEN}Installing Linux Window Managers...${NC}\n"
 # Amusing Programs & Linux Games:
 echo ""
 printf "${LGREEN}Installing Linux Games & Amusing Programs...${NC}\n"
-#sudo apt install -y fortunes fortune-mod #Terminal fortune cookies
+sudo apt install -y fortunes fortune-mod #Terminal fortune cookies
 #sudo apt install -y fortunes-debian-hints
 #sudo apt install -y fortunes-mario 
 #sudo apt install -y fortunes-off #offensive fortunes
