@@ -11,7 +11,7 @@
 # sudo ./Update.sh
 
 ### Correct errors from any previously failed installations (leave enabled):
-sudo apt --fix-broken install -y
+#sudo apt --fix-broken install -y
 sudo dpkg --configure -a
 
 # Remove packages left in an "inconsistent state" (incompatible packages which fail to completely install):
@@ -474,6 +474,10 @@ echo ""
 printf "${LGREEN}Cleaning Up...${NC}\n"
 sudo apt autoclean -y
 sudo apt autoremove -y
+
+### Correct errors from any previously failed installations (leave enabled):
+sudo apt --fix-broken install -y
+#sudo dpkg --configure -a
 
 ### Prompt user to restart system after completing updates (leave enabled):
 #echo ""
