@@ -29,7 +29,9 @@
 # sudo git clone https://github.com/GNOME/gnome-schedule.git
 
 ### Code: ###
-cd /home/pi/Desktop && sudo git clone https://github.com/GNOME/gnome-schedule.git && sudo git clone sudo git clone https://github.com/giuspen/cherrytree.git #Clone Gnome Schedule and CherryTree github repos
+cd /home/pi/Desktop 
+sudo git clone https://github.com/GNOME/gnome-schedule.git #Clone CherryTree Github repo
+sudo git clone https://github.com/giuspen/cherrytree.git #Clone Gnome Schedule Github repo
 
 ## GTK ##
 ## https://download.gnome.org/sources/gtk+/3.24/
