@@ -10,9 +10,14 @@
 # chmod u+x UpdateGTK.sh
 # sudo ./UpdateGTK.sh
 
+## Extract an Archive ##
+# tar -xzvf archive.tar.gz 
+
 ### References ###
 ### GTK Suite: 
 # https://www.gtk.org/docs/installations/linux/
+# https://raspberry-projects.com/pi/programming-in-c/gui-programming-in-c/gtk/installing-gtk
+# https://raspberry-projects.com/pi/category/programming-in-c/gui-programming-in-c/gtk
 
 ## CherryTree ##
 # https://www.giuspen.com/cherrytree/
@@ -22,6 +27,7 @@
 # sudo git clone https://github.com/giuspen/cherrytree.git
 
 ## Gnome Schedule ##
+# https://packages.debian.org/jessie/python-gconf
 # https://wiki.gnome.org/Schedule
 # https://www.unixmen.com/automate-tasks-with-gnome-schedule/
 # http://gnome-schedule.sourceforge.net/
@@ -30,8 +36,11 @@
 
 ### Code: ###
 cd /home/pi/Desktop 
-sudo git clone https://github.com/GNOME/gnome-schedule.git #Clone CherryTree Github repo
-sudo git clone https://github.com/giuspen/cherrytree.git #Clone Gnome Schedule Github repo
+sudo git clone https://github.com/GNOME/gnome-schedule.git #Clone Gnome Schedule Github repo
+sudo git clone https://github.com/giuspen/cherrytree.git #Clone CherryTree Github repo 
+
+### Install Dependencies ##
+sudo apt install -y at build-essential libxml2-utils cmake libgtkmm-3.0-dev libgtksourceviewmm-3.0-dev libxml++2.6-dev libsqlite3-dev gettext libgspell-1-dev libcurl4-openssl-dev libuchardet-dev libgtk-3-dev gnome-common
 
 ## GTK ##
 ## https://download.gnome.org/sources/gtk+/3.24/
@@ -61,6 +70,12 @@ sudo wget https://download.gnome.org/sources/gobject-introspection/1.66/gobject-
 ## https://download.gnome.org/sources/libepoxy/
 sudo wget https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.4.tar.xz #Download Epoxy
 
-
+#Please add the files
+ # codeset.m4 gettext.m4 glibc21.m4 iconv.m4 isc-posix.m4 lcmessage.m4
+ # progtest.m4
+#from the /usr/share/aclocal directory to your autoconf macro directory
+#or directly to your aclocal.m4 file.
+#You will also need config.guess and config.sub, which you can get from
+#ftp://ftp.gnu.org/pub/gnu/config/.
 
 
